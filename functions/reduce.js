@@ -26,7 +26,7 @@ const OUTPUT = arr.reduce(function(acc, cur) {
     return acc
 
 }, 0)
-console.log(OUTPUT)
+//console.log(OUTPUT)
 
 
 // EXAMPLE 2
@@ -39,24 +39,22 @@ const users = [
 
 // list of full names
 const fullnames = users.map((user) => user.firstName + " " + user.lastName)
-console.log(fullnames)
+//console.log(fullnames)
 
-// list of unique ages
-const uniqueAge = users.reduce((acc, cur)=> {
-    if (acc[cur.age]) {
-        acc[cur.age] = ++acc[cur.age]
-    } else {
-        acc[cur.age] = 1
-    }
-
-    return acc
-}, {})
-console.log(uniqueAge)
-
-// list of all firstname whose name are less than 40
+// list of all firstname whose name are less than 30
 
 const fil = users.filter((x) => x.age < 30).map((x) => x.firstName)
-console.log(fil)
+//console.log(fil)
+
+
+// list of all firstname whose name are less than 30
+const red = users.reduce((acc, cur)=> {
+    if (cur.age < 30){
+        acc.push(cur.firstName)
+    }
+    return acc;
+}, [])
+console.log(red)
 
 //const lexx40 = fil.map((x) => x.firstName)
 
